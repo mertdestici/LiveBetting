@@ -1,6 +1,7 @@
 package com.betting.livebetting.util;
 import com.betting.livebetting.model.MatchEvent;
 import com.betting.livebetting.repository.MatchEventRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,15 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Random;
 
+@RequiredArgsConstructor
 @Component
 public class OddsUpdateScheduler {
 
     private final MatchEventRepository matchEventRepository;
     private final Random random = new Random();
-
-    public OddsUpdateScheduler(MatchEventRepository matchEventRepository) {
-        this.matchEventRepository = matchEventRepository;
-    }
 
     @Scheduled(fixedRate = 1000)
     @Transactional

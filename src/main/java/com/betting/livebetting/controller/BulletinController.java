@@ -4,13 +4,14 @@ import com.betting.livebetting.dto.MatchEventRequestDto;
 import com.betting.livebetting.dto.MatchEventResponseDto;
 import com.betting.livebetting.service.BulletinService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/bulletin")
 public class BulletinController {

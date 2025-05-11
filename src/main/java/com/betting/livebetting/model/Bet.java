@@ -21,7 +21,6 @@ public class Bet {
 
     @Enumerated(EnumType.STRING)
     private BetType betType;
-    private String customerId;
     private Integer multiplier;
     private Double stakeAmount;
     private Double lockedOdd;

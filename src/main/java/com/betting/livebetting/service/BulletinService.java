@@ -4,13 +4,13 @@ import com.betting.livebetting.dto.MatchEventRequestDto;
 import com.betting.livebetting.dto.MatchEventResponseDto;
 import com.betting.livebetting.model.MatchEvent;
 import com.betting.livebetting.repository.MatchEventRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class BulletinService {
 
