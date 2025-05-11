@@ -25,7 +25,7 @@ public class BulletinController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping
+    @GetMapping(path = "/getAllMatches")
     public ResponseEntity<List<MatchEventResponseDto>> getAllMatches() {
         return ResponseEntity.ok(bulletinService.getAllMatchEvents());
     }

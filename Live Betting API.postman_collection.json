@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "5c1e69b8-4fc3-413a-b578-dbf824d8a950",
+		"name": "Live Betting API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9106743"
+	},
+	"item": [
+		{
+			"name": "Create Match (Admin)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"leagueName\": \"S\\u00fcper Lig\",\n  \"homeTeam\": \"Galatasaray\",\n  \"awayTeam\": \"Fenerbah\\u00e7e\",\n  \"homeWinOdds\": 1.85,\n  \"drawOdds\": 3.1,\n  \"awayWinOdds\": 2.25,\n  \"startTime\": \"2025-06-01T20:00:00\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bulletin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bulletin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Matches",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bulletin/getAllMatches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bulletin",
+						"getAllMatches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Bet (Customer)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "pass1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"eventId\": 1,\n  \"betType\": \"HOME_WIN\",\n  \"multiplier\": 2,\n  \"stakeAmount\": 50.0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"user1\",\r\n  \"password\": \"pass1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
